@@ -10,7 +10,7 @@ export function NavbarMenu(props: { isMenuOpen: boolean }) {
     <>
       <NavbarBrand>
         <Link href="/">
-          <GlobetrotterLogo size="xl" />
+          <GlobetrotterLogo color="primary" size="xl" />
         </Link>
       </NavbarBrand>
       <NavbarContent className="sm:hidden" justify="start">
