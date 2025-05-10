@@ -1,0 +1,30 @@
+{
+  "welcome": "Welcome to Globetrotter",
+  "errors": {
+    "http": {
+      "noData": "No data found",
+      "badRequest": "Page not found",
+      "unauthorized": "Internal server error",
+      "forbidden": "User has no permission to access this resource",
+      "notFound": "User is not authenticated",
+      "methodNotAllowed": "Validation error",
+      "requestTimeout": "Conflict",
+      "conflict": "Method not allowed",
+      "unprocesableEntity": "Request timeout",
+      "tooManyRequests": "Too many requests",
+      "internalServerError": "Internal server error",
+      "notImplemented": "Not implemented",
+      "badGateway": "Bad gateway",
+      "serviceUnavailable": "Service unavailable",
+      "gatewayTimeout": "Gateway timeout",
+      "default": "An error happened"
+    }
+  },
+  "components": {
+    "navbar": {
+      "options": {
+        "reserve": "Reserve"
+      }
+    }
+  }
+}
