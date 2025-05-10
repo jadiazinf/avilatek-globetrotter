@@ -1,5 +1,15 @@
 {
   "welcome": "Welcome to Globetrotter",
+  "pages": {
+    "index": {
+      "title": "Every flight is the first chapter of an adventure. Where will we take you today?",
+      "subtitle": "Fly with confidence, book with ease",
+      "planYourJourney": "Plan Your Journey",
+      "journeyPrices": "Discover deals that will make the world fit your budget, from",
+      "destinations": "Let our routes take you to places that inspire",
+      "flightsClasses": "Choose how to experience the clouds: with space, comfort or absolute luxury"
+    }
+  },
   "errors": {
     "http": {
       "noData": "No data found",
@@ -23,8 +33,10 @@
   "components": {
     "navbar": {
       "options": {
-        "reserve": "Book a flight"
       }
+    },
+    "bookings": {
+      "book": "Book a flight"
     }
   }
 }

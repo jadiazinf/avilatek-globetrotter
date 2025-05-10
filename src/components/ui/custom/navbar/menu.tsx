@@ -33,7 +33,7 @@ export function NavbarMenu(props: { isMenuOpen: boolean }): JSX.Element {
            * @type {JSX.Element}
            */
         >
-          <GlobetrotterLogo color="primary" size="xl" />
+          <GlobetrotterLogo color="dark" size="xl" />
         </Link>
       </NavbarBrand>
 
