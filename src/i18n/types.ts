@@ -1,12 +1,49 @@
 import { useTranslations } from "next-intl";
 
+/**
+ * Supported application languages
+ * @enum {string}
+ */
 export enum AppLanguages {
+  /** English */
   EN = "en",
+  /** Spanish */
   ES = "es",
 }
 
+/**
+ * Type for next-intl translation function
+ * @typedef {ReturnType<typeof useTranslations>} TranslationFunction
+ */
 export type TranslationFunction = ReturnType<typeof useTranslations>;
 
+/**
+ * Centralized type-safe message keys for internationalization.
+ *
+ * This object serves as both:
+ * 1. A runtime lookup for message keys
+ * 2. A TypeScript type definition for autocompletion
+ *
+ * @constant {Readonly<Record<string, string>>} AppLanguageMessages
+ * @see {@link https://next-intl-docs.vercel.app/docs/usage/typescript#type-safety} Next-Intl Type Safety
+ *
+ * @example
+ * // Using with useTranslations:
+ * const t = useTranslations();
+ * t(AppLanguageMessages.welcome); // "Welcome"
+ *
+ * @example
+ * // JSON files should mirror this structure:
+ * // locales/en.json
+ * {
+ *   "welcome": "Welcome",
+ *   "errors": {
+ *     "http": {
+ *       "notFound": "Page not found"
+ *     }
+ *   }
+ * }
+ */
 export const AppLanguageMessages = {
   welcome: "welcome",
   errors: {
@@ -33,7 +70,7 @@ export const AppLanguageMessages = {
     navbar: {
       options: {
         reserve: "components.navbar.options.reserve",
-      }
-    }
+      },
+    },
   },
 };

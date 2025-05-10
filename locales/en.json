@@ -23,7 +23,7 @@
   "components": {
     "navbar": {
       "options": {
-        "reserve": "Reserve"
+        "reserve": "Book a flight"
       }
     }
   }
