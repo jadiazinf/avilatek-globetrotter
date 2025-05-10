@@ -1,8 +1,5 @@
-import { Button } from "@heroui/button";
-import { getTranslations } from "next-intl/server";
-
+import { BookFlightModalButton } from "@/components/ui/custom/bookings/buttons/modal_pop_up/component";
 import { NavbarComponent } from "@/components/ui/custom/navbar/component";
-import { AppLanguageMessages } from "@/i18n/types";
 
 /**
  * Layout wrapper for the navigation bar with built-in suspense fallback.
@@ -17,14 +14,10 @@ import { AppLanguageMessages } from "@/i18n/types";
  * This component handles async loading states for the navbar content.
  * The fallback shows a pulse animation while content loads.
  */
-export async function NavbarLayout(): Promise<JSX.Element> {
-  const t = await getTranslations();
-
+export function NavbarLayout(): JSX.Element {
   return (
     <NavbarComponent>
-      <Button color="primary" radius="sm">
-        {t(AppLanguageMessages.components.navbar.options.reserve)}
-      </Button>
+      <BookFlightModalButton />
     </NavbarComponent>
   );
 }

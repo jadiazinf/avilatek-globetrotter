@@ -4,10 +4,9 @@ import { getLocale } from "next-intl/server";
 import clsx from "clsx";
 
 import { Providers } from "@/app/providers";
-import { fontSans } from "@/config/fonts";
 import { NavbarLayout } from "@/components/ui/custom/navbar/layout";
-
 import "@/app/globals.css";
+import { fontSans, montserrat, raleway } from "@/config/fonts";
 
 export const metadata: Metadata = {
   title: {
@@ -31,13 +30,16 @@ export default async function RootLayout({
   const locale = await getLocale();
 
   return (
-    <html suppressHydrationWarning lang={locale}>
+    <html
+      suppressHydrationWarning
+      className={`${raleway.variable} ${montserrat.variable} ${fontSans.variable}`}
+      lang={locale}
+    >
       <head />
       <body
         className={clsx(
-          "light min-h-screen bg-background text-foreground font-sans antialiased",
+          "light min-h-screen bg-fly-emirates text-foreground font-sans antialiased",
           "ligth w-screen max-w-screen overflow-x-hidden",
-          fontSans.variable,
         )}
       >
         <NextIntlClientProvider>

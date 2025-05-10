@@ -46,6 +46,16 @@ export type TranslationFunction = ReturnType<typeof useTranslations>;
  */
 export const AppLanguageMessages = {
   welcome: "welcome",
+  pages: {
+    index: {
+      title: "pages.index.title",
+      subtitle: "pages.index.subtitle",
+      planYourJourney: "pages.index.planYourJourney",
+      journeyPrices: "pages.index.journeyPrices",
+      destinations: "pages.index.destinations",
+      flightsClasses: "pages.index.flightsClasses",
+    },
+  },
   errors: {
     http: {
       noData: "errors.http.noData",
@@ -68,9 +78,10 @@ export const AppLanguageMessages = {
   },
   components: {
     navbar: {
-      options: {
-        reserve: "components.navbar.options.reserve",
-      },
+      options: {},
+    },
+    bookings: {
+      book: "components.bookings.book",
     },
   },
 };

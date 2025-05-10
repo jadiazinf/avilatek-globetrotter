@@ -63,7 +63,7 @@ export function NavbarComponent({
   return (
     <Navbar
       isBordered
-      className="h-16 w-full fixed top-0 z-50 bg-background"
+      className="h-16 w-full fixed top-0 z-50 bg-fly-emirates"
       classNames={{
         item: [
           "flex",

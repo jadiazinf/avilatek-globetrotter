@@ -1,5 +1,15 @@
 {
   "welcome": "Bienvenido a Globetrotter",
+  "pages": {
+    "index": {
+      "title": "Cada vuelo es el primer capítulo de una aventura ¿A dónde te llevaremos hoy?",
+      "subtitle": "Vuela con confianza, reserva con facilidad",
+      "planYourJourney": "Planifica tu viaje",
+      "journeyPrices": "Descubre ofertas que harán que el mundo quepa en tu presupuesto, desde",
+      "destinations": "Deja que nuestras rutas te lleven a lugares que inspiran",
+      "flightsClasses": "Elige cómo vivir las nubes: con espacio, confort o lujo absoluto"
+    }
+  },
   "errors": {
     "http": {
       "noData": "No se encontraron datos",
@@ -23,8 +33,10 @@
   "components": {
     "navbar": {
       "options": {
-        "reserve": "Reservar un vuelo"
       }
+    },
+    "bookings": {
+      "book": "Reservar un vuelo"
     }
   }
 }

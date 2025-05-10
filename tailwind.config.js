@@ -9,6 +9,9 @@ const config = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: "#0A1F4F"
+      },
       maxWidth: {
         screen: "max(100vw, 100%)",
       },
@@ -18,10 +21,15 @@ const config = {
       fontFamily: {
         sans: ["var(--font-sans)"],
         mono: ["var(--font-mono)"],
+        raleway: ["var(--font-raleway)"],
+        montserrat: ["var(--font-montserrat)"],
       },
       textColor: {
-        error: "#f43f5e"
+        error: "#f43f5e",
       },
+      backgroundColor: {
+        "fly-emirates": "#FFFFFF"
+      }
     },
   },
   darkMode: "class",
