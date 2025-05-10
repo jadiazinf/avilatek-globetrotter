@@ -20,7 +20,7 @@ import { GlobetrotterLogo } from "@/components/ui/custom/globetrotter_logo/compo
  * @see {@link GlobetrotterLogo} for logo component details
  * @see {@link https://nextjs.org/docs/app/building-your-application/routing/linking-and-navigating} for Next.js Link usage
  */
-export function NavbarMenu(props: { isMenuOpen: boolean }) {
+export function NavbarMenu(props: { isMenuOpen: boolean }): JSX.Element {
   return (
     <>
       {/* Brand section with logo link */}
