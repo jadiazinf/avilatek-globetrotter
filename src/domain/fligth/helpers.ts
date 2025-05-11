@@ -18,7 +18,7 @@ function getPropName(
   }
 }
 
-export async function translateFlightClass(
+export function translateFlightClass(
   flightClass: FlightClass,
   t: TranslationFunction,
 ) {

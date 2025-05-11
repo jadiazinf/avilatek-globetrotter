@@ -94,7 +94,11 @@ export function IndexFormSection(props: Props) {
               </AditionalServicesForm>
             </Tab>
             <Tab key="confirmFlight" title={<ConfirmFlightTitle t={t} />}>
-              <FlightInfo data={formData} flights={props.flights} />
+              <FlightInfo
+                data={formData}
+                flights={props.flights}
+                onPrevious={() => setCurrentTab("aditionalServices")}
+              />
             </Tab>
           </Tabs>
         </CardBody>

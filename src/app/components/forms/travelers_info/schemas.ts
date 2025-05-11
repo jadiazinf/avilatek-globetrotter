@@ -13,7 +13,20 @@ export type DocumentType = keyof typeof DocumentType;
 export function travelersSchema({ t }: { t: TranslationFunction }) {
   return z
     .object({
-      travelersQuantity: z.number().min(1).max(10),
+      travelersQuantity: z
+        .number({
+          message: t(
+            AppLanguageMessages.pages.index.components.forms.flightInfo.schemas
+              .travelersSchema.travelersQuantityIsRequired,
+          ),
+        })
+        .min(1)
+        .max(10, {
+          message: t(
+            AppLanguageMessages.pages.index.components.forms.flightInfo.schemas
+              .travelersSchema.maxTravelersQuantity,
+          ),
+        }),
       travelersInfo: z.array(
         z.object({
           fullName: z.string().min(1),

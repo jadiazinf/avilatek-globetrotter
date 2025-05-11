@@ -1,7 +1,7 @@
 "use client";
 
 import { Link } from "@heroui/link";
-import { NavbarBrand, NavbarContent, NavbarMenuToggle } from "@heroui/navbar";
+import { NavbarBrand } from "@heroui/navbar";
 
 import { GlobetrotterLogo } from "@/components/ui/custom/globetrotter_logo/component";
 
@@ -20,7 +20,7 @@ import { GlobetrotterLogo } from "@/components/ui/custom/globetrotter_logo/compo
  * @see {@link GlobetrotterLogo} for logo component details
  * @see {@link https://nextjs.org/docs/app/building-your-application/routing/linking-and-navigating} for Next.js Link usage
  */
-export function NavbarMenu(props: { isMenuOpen: boolean }): JSX.Element {
+export function NavbarMenu(): JSX.Element {
   return (
     <>
       {/* Brand section with logo link */}
@@ -36,26 +36,6 @@ export function NavbarMenu(props: { isMenuOpen: boolean }): JSX.Element {
           <GlobetrotterLogo color="dark" size="xl" />
         </Link>
       </NavbarBrand>
-
-      {/* Mobile menu toggle (visible only on small screens) */}
-      <NavbarContent
-        className="sm:hidden"
-        justify="start"
-        /**
-         * Mobile navigation content container
-         * @type {JSX.Element}
-         * @description Hidden on screens larger than small (sm) breakpoint
-         */
-      >
-        <NavbarMenuToggle
-          aria-label={props.isMenuOpen ? "Close menu" : "Open menu"}
-          /**
-           * Mobile menu toggle button
-           * @type {JSX.Element}
-           * @description Dynamically updates ARIA label based on menu state
-           */
-        />
-      </NavbarContent>
     </>
   );
 }

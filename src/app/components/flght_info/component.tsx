@@ -8,18 +8,22 @@ import { MdFlight, MdPets, MdLuggage, MdMedicalServices } from "react-icons/md";
 import { FaUser, FaCalendarAlt, FaChair } from "react-icons/fa";
 import { useTransition } from "react";
 import { addToast } from "@heroui/toast";
+import { redirect } from "next/navigation";
 
 import { bookFlightAction } from "./actions/book_flight";
 
 import { FlightFormData, FlightFormProps } from "@/app/components/forms/types";
 import { AppLanguageMessages, TranslationFunction } from "@/i18n/types";
-import { getPriceByDestinationAndClass } from "@/domain/fligth/helpers";
+import {
+  getPriceByDestinationAndClass,
+  translateFlightClass,
+} from "@/domain/fligth/helpers";
 import { FlightClass } from "@/app/components/forms/search_flight/types";
 import { searchFlightSchema } from "@/app/components/forms/search_flight/schemas";
 import { travelersSchema } from "@/app/components/forms/travelers_info/schemas";
 import { aditionalServicesSchema } from "@/app/components/forms/aditional_services/schemas";
 
-export function FlightInfo({ flights, data }: FlightFormProps) {
+export function FlightInfo({ flights, data, onPrevious }: FlightFormProps) {
   const t = useTranslations();
 
   function validateForm(data: FlightFormData, t: TranslationFunction) {
@@ -51,12 +55,16 @@ export function FlightInfo({ flights, data }: FlightFormProps) {
     }
 
     startTransition(async () => {
-      await bookFlightAction(data);
+      await bookFlightAction();
 
       addToast({
         title: t(AppLanguageMessages.errors.http.created),
         color: "success",
       });
+
+      setTimeout(() => {
+        redirect("/");
+      }, 1000);
     });
   }
 
@@ -127,13 +135,10 @@ export function FlightInfo({ flights, data }: FlightFormProps) {
           <DetailItem
             icon={<MdFlight />}
             label={t(AppLanguageMessages.domain.flights.flightClasses.propName)}
-            value={
-              data.searchFlight?.flightClass
-                ? t(
-                    `domain.flights.flightClasses.${data.searchFlight.flightClass}` as keyof typeof AppLanguageMessages.domain.flights.flightClasses,
-                  )
-                : "-"
-            }
+            value={translateFlightClass(
+              data!.searchFlight!.flightClass! as FlightClass,
+              t,
+            )}
           />
 
           <DetailItem
@@ -141,7 +146,7 @@ export function FlightInfo({ flights, data }: FlightFormProps) {
             label={t(
               AppLanguageMessages.domain.booking.searchFlight.destinationPrice,
             )}
-            value={`${
+            value={`$ ${
               getPriceByDestinationAndClass(
                 flights,
                 data.searchFlight?.destiny,
@@ -250,7 +255,7 @@ export function FlightInfo({ flights, data }: FlightFormProps) {
       <div className="space-y-2">
         <div className="flex justify-between font-medium">
           <span>{t(AppLanguageMessages.domain.booking.total)}:</span>
-          <span>{calculateTotal()} USD</span>
+          <span>$ {calculateTotal()} USD</span>
         </div>
       </div>
 
@@ -260,7 +265,7 @@ export function FlightInfo({ flights, data }: FlightFormProps) {
           isDisabled={isPending}
           radius="sm"
           variant="ghost"
-          onPress={() => window.history.back()}
+          onPress={() => onPrevious()}
         >
           {t(AppLanguageMessages.components.buttons.goBack)}
         </Button>

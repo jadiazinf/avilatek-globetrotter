@@ -17,4 +17,5 @@ export type FlightFormData = {
 export type FlightFormProps = {
   data: FlightFormData;
   flights: Flight[];
+  onPrevious: () => void;
 };

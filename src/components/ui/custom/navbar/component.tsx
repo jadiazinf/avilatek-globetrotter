@@ -1,7 +1,6 @@
 "use client";
 
 import { Navbar, NavbarContent, NavbarItem } from "@heroui/navbar";
-import { useState } from "react";
 
 import { NavbarMenu } from "@/components/ui/custom/navbar/menu";
 
@@ -28,7 +27,6 @@ export function NavbarComponent({
 }: {
   children: React.ReactNode;
 }): JSX.Element {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   // const t = useTranslations();
 
   // const pathname = usePathname();
@@ -80,9 +78,7 @@ export function NavbarComponent({
           "data-[active=true]:after:bg-primary",
         ],
       }}
-      isMenuOpen={isMenuOpen}
       maxWidth="2xl"
-      onMenuOpenChange={setIsMenuOpen}
 
       /**
        * Root navbar container
@@ -93,7 +89,7 @@ export function NavbarComponent({
        * - Controlled mobile menu state
        */
     >
-      <NavbarMenu isMenuOpen={isMenuOpen} />
+      <NavbarMenu />
 
       {/* Desktop navigation items (hidden on mobile) */}
       <NavbarContent
