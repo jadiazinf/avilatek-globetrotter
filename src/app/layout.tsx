@@ -32,14 +32,14 @@ export default async function RootLayout({
   return (
     <html
       suppressHydrationWarning
-      className={`${raleway.variable} ${montserrat.variable} ${fontSans.variable}`}
+      className={`${raleway.variable} ${montserrat.variable} ${fontSans.variable} scroll-smooth bg-fly-emirates `}
       lang={locale}
     >
       <head />
       <body
         className={clsx(
           "light min-h-screen bg-fly-emirates text-foreground font-sans antialiased",
-          "ligth w-screen max-w-screen overflow-x-hidden",
+          "ligth w-screen max-w-screen overflow-x-hidden mb-10",
         )}
       >
         <NextIntlClientProvider>

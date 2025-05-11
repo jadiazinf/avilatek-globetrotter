@@ -1,4 +1,4 @@
-import { AppLanguageMessages, TranslationFunction } from "@/i18n/types";
+import { TranslationFunction } from "@/i18n/types";
 
 type Props = {
   /**
@@ -36,12 +36,7 @@ export type NavbarComponentOptions = {
  * to include more navigation items as needed.
  */
 function getNavbarComponentOptions(props: Props): NavbarComponentOptions[] {
-  const options: NavbarComponentOptions[] = [
-    {
-      text: props.t(AppLanguageMessages.components.navbar.options.reserve),
-      href: "/",
-    },
-  ];
+  const options: NavbarComponentOptions[] = [];
 
   return options;
 }

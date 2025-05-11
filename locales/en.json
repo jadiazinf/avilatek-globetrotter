@@ -5,9 +5,51 @@
       "title": "Every flight is the first chapter of an adventure. Where will we take you today?",
       "subtitle": "Fly with confidence, book with ease",
       "planYourJourney": "Plan Your Journey",
-      "journeyPrices": "Discover deals that will make the world fit your budget, from",
+      "journeyPrices": "Discover deals that will make the world fit your budget",
       "destinations": "Let our routes take you to places that inspire",
-      "flightsClasses": "Choose how to experience the clouds: with space, comfort or absolute luxury"
+      "flightsClasses": "Choose how to experience the clouds: with space, comfort or absolute luxury",
+      "components": {
+        "forms": {
+          "flightInfo": {
+            "searchFlight": "Flight info",
+            "travelersInfo": "Travelers info",
+            "aditionalServicesInfo": "Aditional services",
+            "confirmFlight": "Confirma flight",
+            "schemas": {
+              "searchFlightSchema": {
+                "destinyIsRequired": "Destination is required",
+                "departureDateIsRequired": "Departure date is required",
+                "departureDateMustBeInTheFuture": "Departure date cannot be in the past",
+                "returnDateIsRequired": "Return date is required",
+                "returnDateMustBeGreaterThanDepartureDate": "Return date must be after departure date"
+              },
+              "travelerSchema": {
+                "fullNameIsRequired": "Full name is required",
+                "fullNameMinLength": "Full name must be at least 3 characters",
+                "birthdateIsRequired": "Birthdate is required",
+                "invalidBirthdate": "Invalid birthdate",
+                "documentTypeIsRequired": "Document type is required",
+                "documentNumberIsRequired": "Document number is required",
+                "documentNumber": "Invalid document number"
+              },
+              "travelersSchema": {
+                "travelersQuantityIsRequired": "Number of passengers is required",
+                "minTravelersQuantity": "Minimum of 1 passenger required",
+                "petsQuantityIsRequired": "Pets quantity is required",
+                "invalidPetsQuantity": "At least one pet needed",
+                "invalidLuggageQuantity": "Need to declare atleast on extra luggage",
+                "invalidInformationForTravelers": "You must provide information for all passengers",
+                "maxTravelersQuantity": "Max travelers quantity exceeded. Maximum 10"
+              },
+              "aditionalServicesSchema": {
+                "specialAssistanceNoteIsRequired": "Please provide special assistance details",
+                "specialAssistanceMaxCharacters": "Max characters exceeded. Maximum 10 characters"
+              },
+              "confirmFlightInvalidData": "There are fields on the other forms that need to be completed before submit"
+            }
+          }
+        }
+      }
     }
   },
   "errors": {
@@ -27,8 +69,17 @@
       "badGateway": "Bad gateway",
       "serviceUnavailable": "Service unavailable",
       "gatewayTimeout": "Gateway timeout",
-      "default": "An error happened"
+      "default": "An error happened",
+      "created": "Flight booked successfully"
     }
+  },
+  "shared": {
+    "schemas": {
+      "invalidDate": "The date has not a valid format"
+    },
+    "yes": "Yes",
+    "no": "No",
+    "remove": "Remove"
   },
   "components": {
     "navbar": {
@@ -36,7 +87,60 @@
       }
     },
     "bookings": {
-      "book": "Book a flight"
+      "bookFlight": "Book a flight",
+      "book": "Book"
+    },
+    "buttons": {
+      "continue": "Continue",
+      "goBack": "Go back",
+      "submit": "submit"
+    }
+  },
+  "domain": {
+    "flights": {
+      "flightClasses": {
+        "propName": "Class flight",
+        "Economy": "Economy",
+        "Business": "Business",
+        "FirstClass": "First Class"
+      },
+      "destination": {
+        "propName": "Destination"
+      },
+      "flightBookingSuccessful": {
+        "noFlights": "There is no flights available, try again later",
+        "flightBookingSuccessful": "Flight booking created successfully"
+      }
+    },
+    "booking": {
+      "searchFlight": {
+        "rangeDate": "Travel dates (departure - returning)",
+        "destinationPrice": "Destination price"
+      },
+      "travelersData": {
+        "travelersQuantity": "Amount of passengers",
+        "propName": "Travelers information",
+        "fullname": "Full name",
+        "birthdate": "Birthdate",
+        "dni": "Identity document",
+        "withPets": "Traveling with pets?",
+        "yes": "Yes",
+        "no": "No",
+        "petsQuantity": "Number of pets",
+        "withExtraLuggage": "Do you require extra luggage?",
+        "extraLuggageQuantity": "Number of extra bags",
+        "petsCost": "Pet cost",
+        "extraLuggageCost": "Extra luggage cost"
+      },
+      "extraServices": {
+        "propName": "Extra services",
+        "withTravelAssurance": "Would you like to add travel insurance?",
+        "withPreferenceSeats": "Would you like to select preferential seats?",
+        "withSpecialAssistance": "Do you require special assistance?",
+        "specialAssistanceDescription": "Special assistance description (200 characters maximum)"
+      },
+      "total": "Total amount to pay",
+      "traveler": "Traveler"
     }
   }
 }

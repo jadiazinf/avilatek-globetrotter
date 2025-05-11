@@ -9,8 +9,12 @@ const config = {
   ],
   theme: {
     extend: {
+      scrollBehavior: {
+        smooth: 'smooth',
+      },
       colors: {
-        primary: "#0A1F4F"
+        primary: "#11406B",
+        fire: "#DC3A36"
       },
       maxWidth: {
         screen: "max(100vw, 100%)",
