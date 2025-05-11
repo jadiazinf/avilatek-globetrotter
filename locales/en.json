@@ -123,6 +123,7 @@
         "fullname": "Full name",
         "birthdate": "Birthdate",
         "dni": "Identity document",
+        "dniType": "Document type",
         "withPets": "Traveling with pets?",
         "yes": "Yes",
         "no": "No",

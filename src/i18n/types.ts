@@ -195,6 +195,7 @@ export const AppLanguageMessages = {
         fullname: "domain.booking.travelersData.fullname",
         birthdate: "domain.booking.travelersData.birthdate",
         dni: "domain.booking.travelersData.dni",
+        dniType: "domain.booking.travelersData.dniType",
         withPets: "domain.booking.travelersData.withPets",
         petsQuantity: "domain.booking.travelersData.petsQuantity",
         withExtraLuggage: "domain.booking.travelersData.withExtraLuggage",

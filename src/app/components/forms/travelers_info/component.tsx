@@ -175,7 +175,7 @@ export function TravelersInfoForm(props: Props) {
             )}
           />
 
-          <div className="flex gap-3 items-center">
+          <div className="flex flex-col lg:flex-row gap-3 items-center">
             <Controller
               control={control}
               name={`travelersInfo.${index}.documentType`}
@@ -186,7 +186,7 @@ export function TravelersInfoForm(props: Props) {
                   }
                   isInvalid={!!errors.travelersInfo?.[index]?.documentType}
                   label={t(
-                    AppLanguageMessages.domain.booking.travelersData.dni,
+                    AppLanguageMessages.domain.booking.travelersData.dniType,
                   )}
                   radius="sm"
                   selectedKeys={[field.value]}

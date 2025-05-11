@@ -123,6 +123,7 @@
         "fullname": "Nombre completo",
         "birthdate": "Fecha de nacimiento",
         "dni": "Documento de indentidad",
+        "dniType": "Tipo de documento",
         "withPets": "¿Viaje con mascotas?",
         "yes": "Sí",
         "no": "No",
