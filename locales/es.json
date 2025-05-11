@@ -5,9 +5,51 @@
       "title": "Cada vuelo es el primer capítulo de una aventura ¿A dónde te llevaremos hoy?",
       "subtitle": "Vuela con confianza, reserva con facilidad",
       "planYourJourney": "Planifica tu viaje",
-      "journeyPrices": "Descubre ofertas que harán que el mundo quepa en tu presupuesto, desde",
+      "journeyPrices": "Descubre ofertas que harán que el mundo quepa en tu presupuesto",
       "destinations": "Deja que nuestras rutas te lleven a lugares que inspiran",
-      "flightsClasses": "Elige cómo vivir las nubes: con espacio, confort o lujo absoluto"
+      "flightsClasses": "Elige cómo vivir las nubes: con espacio, confort o lujo absoluto",
+      "components": {
+        "forms": {
+          "flightInfo": {
+            "searchFlight": "Información de vuelo",
+            "travelersInfo": "Información de pasajeros",
+            "aditionalServicesInfo": "Servicios adicionales",
+            "confirmFlight": "Confirmar vuelo",
+            "schemas": {
+              "searchFlightSchema": {
+                "destinyIsRequired": "El destino es requerido",
+                "departureDateIsRequired": "La fecha de salida es requerida",
+                "departureDateMustBeInTheFuture": "La fecha de salida no puede ser anterior a hoy",
+                "returnDateIsRequired": "La fecha de retorno es requerida",
+                "returnDateMustBeGreaterThanDepartureDate": "La fecha de retorno debe de ser posterior a la fecha de salida"
+              },
+              "travelerSchema": {
+                "fullNameIsRequired": "El nombre es requerido",
+                "fullNameMinLength": "El nombre debe de tener por lo menos tres caracteres",
+                "birthdateIsRequired": "La fecha de nacimiento es requerida",
+                "invalidBirthdate": "La fecha de nacimiento es inválida",
+                "documentNumberIsRequired": "El documento es requerido",
+                "documentTypeIsRequired": "El tipo de documento es requerido",
+                "documentNumber": "El documento no es válido"
+              },
+              "travelersSchema": {
+                "travelersQuantityIsRequired": "El número de pasajeros es requerido",
+                "minTravelersQuantity": "El mínimo de pasajeros es 1",
+                "petsQuantityIsRequired": "El número de mascotas es requerido",
+                "invalidPetsQuantity": "Al menos una mascota se debe de guardar",
+                "invalidLuggageQuantity": "Al menos un equipaje extra debe de ser declarado",
+                "invalidInformationForTravelers": "Debe de especificar la información para todos los pasajeros",
+                "maxTravelersQuantity": "Número máximo de viajeros excedido. Máximo 10"
+              },
+              "aditionalServicesSchema": {
+                "specialAssistanceNoteIsRequired": "Debe de proveer detalles de la asistencia especial",
+                "specialAssistanceMaxCharacters": "Cantidad de caracteres máximos excedido. Máximo 200 caracteres"
+              },
+              "confirmFlightInvalidData": "Hay campos que requieren de ser llenados antes de confirmar la reserva"
+            }
+          }
+        }
+      }
     }
   },
   "errors": {
@@ -27,8 +69,17 @@
       "badGateway": "Puerta de enlace incorrecta",
       "serviceUnavailable": "Servicio no disponible",
       "gatewayTimeout": "Tiempo de espera de la puerta de enlace",
-      "default": "Ocurrió un error"
+      "default": "Ocurrió un error",
+      "created": "Vuelo reservado satisfactoriamente"
     }
+  },
+  "shared": {
+    "schemas": {
+      "invalidDate": "La fecha no tiene un formato válido"
+    },
+    "yes": "Sí",
+    "no": "No",
+    "remove": "Eliminar"
   },
   "components": {
     "navbar": {
@@ -36,7 +87,60 @@
       }
     },
     "bookings": {
-      "book": "Reservar un vuelo"
+      "bookFlight": "Reservar un vuelo",
+      "book": "Reservar"
+    },
+    "buttons": {
+      "continue": "Continuar",
+      "goBack": "Regresar",
+      "submit": "Aceptar"
+    }
+  },
+  "domain": {
+    "flights": {
+      "flightClasses": {
+        "propName": "Clase de vuelo",
+        "Economy": "Económico",
+        "Business": "Empresarial",
+        "FirstClass": "Primera Clase"
+      },
+      "destination": {
+        "propName": "Destino"
+      },
+      "apiResponseMessages": {
+        "noFlights": "No hay vuelo disponibles actualmente. Intente de nuevo más tarde",
+        "flightBookingSuccessful": "Reserva de viaje creada exitosamente"
+      }
+    },
+    "booking": {
+      "searchFlight": {
+        "rangeDate": "Fechas de viaje (ida y vuelta)",
+        "destinationPrice": "Precio del boleto"
+      },
+      "travelersData": {
+        "travelersQuantity": "Número de viajeros",
+        "propName": "Información de los viajeros",
+        "fullname": "Nombre completo",
+        "birthdate": "Fecha de nacimiento",
+        "dni": "Documento de indentidad",
+        "withPets": "¿Viaje con mascotas?",
+        "yes": "Sí",
+        "no": "No",
+        "petsQuantity": "Número de mascotas",
+        "withExtraLuggage": "¿Requiere de equipaje extra?",
+        "extraLuggageQuantity": "Número de maletas extras",
+        "petsCost": "Costo por mascota",
+        "extraLuggageCost": "Costo por equipaje adicional"
+      },
+      "extraServices": {
+        "propName": "Servicios extras",
+        "withTravelAssurance": "¿Deseas agregar seguro de viaje?",
+        "withPreferenceSeats": "¿Deseas seleccionar asientos preferenciales?",
+        "withSpecialAssistance": "¿Requiere asistencia especial?",
+        "specialAssistanceDescription": "Descripción de la asistencia especial (máximo 200 caracteres)"
+      },
+      "total": "Monto total a cancelar",
+      "traveler": "Viaje"
     }
   }
 }

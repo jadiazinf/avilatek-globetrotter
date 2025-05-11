@@ -1,5 +1,6 @@
-import { BookFlightModalButton } from "@/components/ui/custom/bookings/buttons/modal_pop_up/component";
+import { BookFlightButton } from "@/components/ui/custom/bookings/buttons/component";
 import { NavbarComponent } from "@/components/ui/custom/navbar/component";
+import LanguageSwitcher from "@/i18n/component";
 
 /**
  * Layout wrapper for the navigation bar with built-in suspense fallback.
@@ -17,7 +18,10 @@ import { NavbarComponent } from "@/components/ui/custom/navbar/component";
 export function NavbarLayout(): JSX.Element {
   return (
     <NavbarComponent>
-      <BookFlightModalButton />
+      <div className="flex items-center gap-5">
+        <LanguageSwitcher />
+        <BookFlightButton />
+      </div>
     </NavbarComponent>
   );
 }
