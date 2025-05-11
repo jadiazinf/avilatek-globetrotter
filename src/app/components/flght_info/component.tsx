@@ -9,9 +9,9 @@ import { FaUser, FaCalendarAlt, FaChair } from "react-icons/fa";
 import { useTransition } from "react";
 import { addToast } from "@heroui/toast";
 import { redirect } from "next/navigation";
+import { BiSolidPlaneLand, BiSolidPlaneTakeOff } from "react-icons/bi";
 
-import { bookFlightAction } from "./actions/book_flight";
-
+import { bookFlightAction } from "@/app/components/flght_info/actions/book_flight";
 import { FlightFormData, FlightFormProps } from "@/app/components/forms/types";
 import { AppLanguageMessages, TranslationFunction } from "@/i18n/types";
 import {
@@ -117,7 +117,14 @@ export function FlightInfo({ flights, data, onPrevious }: FlightFormProps) {
       <div className="space-y-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <DetailItem
-            icon={<MdFlight />}
+            icon={<BiSolidPlaneTakeOff />}
+            label={t(
+              AppLanguageMessages.domain.booking.searchFlight.departurePlace,
+            )}
+            value={data.searchFlight?.departurePlace || "-"}
+          />
+          <DetailItem
+            icon={<BiSolidPlaneLand />}
             label={t(AppLanguageMessages.domain.flights.destination.propName)}
             value={data.searchFlight?.destiny || "-"}
           />

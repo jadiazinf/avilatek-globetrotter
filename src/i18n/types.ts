@@ -67,6 +67,8 @@ export const AppLanguageMessages = {
               "pages.index.components.forms.flightInfo.confirmFlight",
             schemas: {
               searchFlightSchema: {
+                departurePlaceIsRequired:
+                  "pages.index.components.forms.flightInfo.schemas.searchFlightSchema.departurePlaceIsRequired",
                 destinyIsRequired:
                   "pages.index.components.forms.flightInfo.schemas.searchFlightSchema.destinyIsRequired",
                 departureDateIsRequired:
@@ -188,6 +190,7 @@ export const AppLanguageMessages = {
       searchFlight: {
         rangeDate: "domain.booking.searchFlight.rangeDate",
         destinationPrice: "domain.booking.searchFlight.destinationPrice",
+        departurePlace: "domain.booking.searchFlight.departurePlace",
       },
       travelersData: {
         travelersQuantity: "domain.booking.travelersData.travelersQuantity",

@@ -44,6 +44,7 @@ export function SearchFlightForm(props: Props) {
   } = useForm<SearchFlightSchema>({
     resolver: zodResolver(searchFlightSchema({ t })),
     defaultValues: props.data || {
+      departurePlace: "",
       destiny: "",
       departureDate: "",
       returnDate: "",
@@ -82,7 +83,23 @@ export function SearchFlightForm(props: Props) {
       onSubmit={handleSubmit(props.onSubmit)}
     >
       <Select
-        className="col-span-full"
+        className="col-span-full lg:col-span-2"
+        errorMessage={errors.departurePlace?.message}
+        isInvalid={!!errors.departurePlace}
+        label={t(
+          AppLanguageMessages.domain.booking.searchFlight.departurePlace,
+        )}
+        radius="sm"
+        size="lg"
+        variant="bordered"
+        {...register("departurePlace")}
+      >
+        <SelectItem key="Venezuela">Venezuela</SelectItem>
+        <SelectItem key="Brasil">Brasil</SelectItem>
+        <SelectItem key="Nueva Zelanda">Nueva Zelanda</SelectItem>
+      </Select>
+      <Select
+        className="col-span-full lg:col-span-2"
         errorMessage={errors.destiny?.message}
         isInvalid={!!errors.destiny}
         label={t(AppLanguageMessages.domain.flights.destination.propName)}

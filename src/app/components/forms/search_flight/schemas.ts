@@ -8,6 +8,20 @@ import { FlightClass } from "@/app/components/forms/search_flight/types";
 export function searchFlightSchema({ t }: FlightInfoSchemaProps) {
   return z
     .object({
+      departurePlace: z
+        .string({
+          message: t(
+            AppLanguageMessages.pages.index.components.forms.flightInfo.schemas
+              .searchFlightSchema.departurePlaceIsRequired,
+          ),
+        })
+        .min(
+          1,
+          t(
+            AppLanguageMessages.pages.index.components.forms.flightInfo.schemas
+              .searchFlightSchema.departurePlaceIsRequired,
+          ),
+        ),
       destiny: z
         .string({
           message: t(

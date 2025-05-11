@@ -17,6 +17,7 @@
             "confirmFlight": "Confirma flight",
             "schemas": {
               "searchFlightSchema": {
+                "departurePlaceIsRequired": "Departure place es required",
                 "destinyIsRequired": "Destination is required",
                 "departureDateIsRequired": "Departure date is required",
                 "departureDateMustBeInTheFuture": "Departure date cannot be in the past",
@@ -115,7 +116,8 @@
     "booking": {
       "searchFlight": {
         "rangeDate": "Travel dates (departure - returning)",
-        "destinationPrice": "Destination price"
+        "destinationPrice": "Destination price",
+        "departurePlace": "Departure place"
       },
       "travelersData": {
         "travelersQuantity": "Amount of passengers",
